@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import "@fontsource-variable/dm-sans";
 import "@fontsource/marcellus";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import DesktopNav from "./components/desktop-nav/DesktopNav";
 import IconButtonWithToolbar from "./components/icon-button-with-toolbar/IconButtonWithToolbar";
 import Logo from "./components/icons/logo/Logo";
@@ -25,11 +26,11 @@ export function App() {
         <div className="flex flex-col overflow-hidden order-1 lg:order-2">
           <header className="bg-background border-b px-4 py-3 flex items-center gap-4">
             <Logo className="lg:hidden block" size={50} showText={false} />
-            <Input
-              type="text"
-              placeholder="Search"
-              className="bg-muted rounded-full px-4 py-2 flex-1"
-            />
+            <div className="bg-muted flex-1 relative rounded-md">
+              <Input type="search" placeholder="Search" />
+              {/* // todo: if input hide glass */}
+              <MagnifyingGlassIcon className="h-5 w-5 absolute right-5 top-1/2 -translate-y-1/2 text-background" />
+            </div>
             <IconButtonWithToolbar tooltipContent="asd">
               <SignalIcon className="h-5 w-5 mx-auto mt-1" />
             </IconButtonWithToolbar>
