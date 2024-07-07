@@ -1,13 +1,20 @@
 import { useTheme } from "@/components/theme-provider";
 import { getContrastColor } from "@/utils/helpers";
 
-export default function Logo() {
+interface LogoProps {
+  size?: number;
+  showText?: boolean;
+  className?: string;
+}
+
+export default function Logo({ size = 75, showText = true, className }: LogoProps) {
   const { theme } = useTheme();
   return (
-    <div className="mx-auto">
+    // todo: change to link when React router
+    <div className={`mx-auto ${className}`}>
       <svg
-        width={75}
-        height={75}
+        width={size}
+        height={size}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 200 200"
       >
@@ -29,7 +36,7 @@ export default function Logo() {
         <circle cx="125" cy="125" r="8" fill={getContrastColor(theme)} />
         <circle cx="100" cy="100" r="8" fill={getContrastColor(theme)} />
       </svg>
-      <p className="font-semibold">PawnParlor</p>
+      {showText && <p className="font-semibold">PawnParlor</p>}
     </div>
   );
 }

@@ -23,7 +23,11 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {Object.values(themeConfig).map((theme) => (
-          <DropdownMenuItem key={theme} onClick={() => setTheme(theme)}>
+          <DropdownMenuItem
+            className="cursor-pointer"
+            key={theme}
+            onClick={() => setTheme(theme)}
+          >
             {theme}
           </DropdownMenuItem>
         ))}
