@@ -1,167 +1,171 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ModeToggle } from "./components/mode-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import { Card, CardContent, CardFooter, CardHeader } from "./components/ui/card";
+import { Layout } from "./layout/Layout";
 
 export function App() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[150px_auto] h-screen w-full lg:w-3/4 xl:w-1/2 mx-auto mt-4 overflow-hidden">
-      <div className="bg-background border-r">
-        <div className="flex flex-col h-full gap-4 p-4">
-          <a href="#" className="flex items-center gap-2 font-semibold">
-            <LogInIcon className="h-6 w-6" />
-            <span className="text-lg">Social App</span>
-          </a>
-          <nav className="flex flex-col gap-2">
-            <a
-              href="#"
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              <HomeIcon className="h-5 w-5" />
-              Home
+    <Layout>
+      <div className="grid grid-cols-1 lg:grid-cols-[150px_auto] h-screen w-full lg:w-3/4 xl:w-1/2 mx-auto mt-4 overflow-hidden">
+        <div className="bg-background border-r">
+          <div className="flex flex-col h-full gap-4 p-4">
+            <a href="#" className="flex items-center gap-2 font-semibold">
+              <LogInIcon className="h-6 w-6" />
+              <span className="text-lg">Social App</span>
             </a>
-            <a
-              href="#"
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              <CompassIcon className="h-5 w-5" />
-              Explore
-            </a>
-            <a
-              href="#"
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              <BellIcon className="h-5 w-5" />
-              Notifications
-            </a>
-            <a
-              href="#"
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              <UserIcon className="h-5 w-5" />
-              Profile
-            </a>
-          </nav>
+            <nav className="flex flex-col gap-2">
+              <a
+                href="#"
+                className="flex items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                <HomeIcon className="h-5 w-5" />
+                Home
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                <CompassIcon className="h-5 w-5" />
+                Explore
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                <BellIcon className="h-5 w-5" />
+                Notifications
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 rounded-md px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                <UserIcon className="h-5 w-5" />
+                Profile
+              </a>
+            </nav>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col overflow-hidden">
-        <header className="bg-background border-b px-4 py-3 flex items-center gap-4">
-          <Input
-            type="text"
-            placeholder="Search"
-            className="bg-muted rounded-full px-4 py-2 flex-1"
-          />
-          <Button variant="ghost" size="icon" className="rounded-full">
-            <SignalIcon className="h-5 w-5" />
-          </Button>
-          <Button variant="ghost" size="icon" className="rounded-full">
-            <MessageCircleIcon className="h-5 w-5" />
-          </Button>
-          <Avatar className="w-8 h-8 border">
-            <AvatarImage src="/placeholder-user.jpg" />
-            <AvatarFallback>AC</AvatarFallback>
-          </Avatar>
-        </header>
-        <div className="flex-1 overflow-auto">
-          <div className="grid gap-4 p-4">
-            <Card>
-              <CardHeader className="flex items-center gap-4">
-                <Avatar className="w-10 h-10 border">
-                  <AvatarImage src="/placeholder-user.jpg" />
-                  <AvatarFallback>AC</AvatarFallback>
-                </Avatar>
-                <div>
-                  <div className="font-semibold">Acme Inc</div>
-                  <div className="text-sm text-muted-foreground">@acmeinc · 2h</div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Excited to announce our latest product launch! Check it out and let us
-                  know what you think.
-                </p>
-                <img
-                  src="/placeholder.svg"
-                  alt="Product image"
-                  className="mt-4 rounded-lg object-cover max-w-full"
-                />
-              </CardContent>
-              <CardFooter className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <Button variant="ghost" size="icon">
-                    <HeartIcon className="h-5 w-5" />
-                    <span className="sr-only">Like</span>
-                  </Button>
-                  <Button variant="ghost" size="icon">
-                    <MessageCircleIcon className="h-5 w-5" />
-                    <span className="sr-only">Comment</span>
-                  </Button>
-                  <Button variant="ghost" size="icon">
-                    <ShareIcon className="h-5 w-5" />
-                    <span className="sr-only">Share</span>
-                  </Button>
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  125 Likes · 15 Comments
-                </div>
-              </CardFooter>
-            </Card>
-            <Card>
-              <CardHeader className="flex items-center gap-4">
-                <Avatar className="w-10 h-10 border">
-                  <AvatarImage src="/placeholder-user.jpg" />
-                  <AvatarFallback>AC</AvatarFallback>
-                </Avatar>
-                <div>
-                  <div className="font-semibold">Acme Inc</div>
-                  <div className="text-sm text-muted-foreground">@acmeinc · 1d</div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Excited to share our new office space! We've been working hard to create
-                  a modern and collaborative environment for our team.
-                </p>
-                <div className="grid grid-cols-2 gap-4 mt-4">
+        <div className="flex flex-col overflow-hidden">
+          <header className="bg-background border-b px-4 py-3 flex items-center gap-4">
+            <Input
+              type="text"
+              placeholder="Search"
+              className="bg-muted rounded-full px-4 py-2 flex-1"
+            />
+            <Button variant="ghost" size="icon" className="rounded-full">
+              <SignalIcon className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" className="rounded-full">
+              <MessageCircleIcon className="h-5 w-5" />
+            </Button>
+            <Avatar className="w-8 h-8 border">
+              <AvatarImage src="/placeholder-user.jpg" />
+              <AvatarFallback>AC</AvatarFallback>
+            </Avatar>
+            <ModeToggle />
+          </header>
+          <div className="flex-1 overflow-auto">
+            <div className="grid gap-4 p-4">
+              <Card>
+                <CardHeader className="flex items-center gap-4">
+                  <Avatar className="w-10 h-10 border">
+                    <AvatarImage src="/placeholder-user.jpg" />
+                    <AvatarFallback>AC</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <div className="font-semibold">Acme Inc</div>
+                    <div className="text-sm text-muted-foreground">@acmeinc · 2h</div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    Excited to announce our latest product launch! Check it out and let us
+                    know what you think.
+                  </p>
                   <img
                     src="/placeholder.svg"
-                    alt="Office image 1"
-                    className="rounded-lg object-cover max-w-full"
+                    alt="Product image"
+                    className="mt-4 rounded-lg object-cover max-w-full"
                   />
-                  <img
-                    src="/placeholder.svg"
-                    alt="Office image 2"
-                    className="rounded-lg object-cover max-w-full"
-                  />
-                </div>
-              </CardContent>
-              <CardFooter className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <Button variant="ghost" size="icon">
-                    <HeartIcon className="h-5 w-5" />
-                    <span className="sr-only">Like</span>
-                  </Button>
-                  <Button variant="ghost" size="icon">
-                    <MessageCircleIcon className="h-5 w-5" />
-                    <span className="sr-only">Comment</span>
-                  </Button>
-                  <Button variant="ghost" size="icon">
-                    <ShareIcon className="h-5 w-5" />
-                    <span className="sr-only">Share</span>
-                  </Button>
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  250 Likes · 32 Comments
-                </div>
-              </CardFooter>
-            </Card>
+                </CardContent>
+                <CardFooter className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <Button variant="ghost" size="icon">
+                      <HeartIcon className="h-5 w-5" />
+                      <span className="sr-only">Like</span>
+                    </Button>
+                    <Button variant="ghost" size="icon">
+                      <MessageCircleIcon className="h-5 w-5" />
+                      <span className="sr-only">Comment</span>
+                    </Button>
+                    <Button variant="ghost" size="icon">
+                      <ShareIcon className="h-5 w-5" />
+                      <span className="sr-only">Share</span>
+                    </Button>
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    125 Likes · 15 Comments
+                  </div>
+                </CardFooter>
+              </Card>
+              <Card>
+                <CardHeader className="flex items-center gap-4">
+                  <Avatar className="w-10 h-10 border">
+                    <AvatarImage src="/placeholder-user.jpg" />
+                    <AvatarFallback>AC</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <div className="font-semibold">Acme Inc</div>
+                    <div className="text-sm text-muted-foreground">@acmeinc · 1d</div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    Excited to share our new office space! We've been working hard to
+                    create a modern and collaborative environment for our team.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 mt-4">
+                    <img
+                      src="/placeholder.svg"
+                      alt="Office image 1"
+                      className="rounded-lg object-cover max-w-full"
+                    />
+                    <img
+                      src="/placeholder.svg"
+                      alt="Office image 2"
+                      className="rounded-lg object-cover max-w-full"
+                    />
+                  </div>
+                </CardContent>
+                <CardFooter className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <Button variant="ghost" size="icon">
+                      <HeartIcon className="h-5 w-5" />
+                      <span className="sr-only">Like</span>
+                    </Button>
+                    <Button variant="ghost" size="icon">
+                      <MessageCircleIcon className="h-5 w-5" />
+                      <span className="sr-only">Comment</span>
+                    </Button>
+                    <Button variant="ghost" size="icon">
+                      <ShareIcon className="h-5 w-5" />
+                      <span className="sr-only">Share</span>
+                    </Button>
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    250 Likes · 32 Comments
+                  </div>
+                </CardFooter>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
-
 
 function BellIcon(props) {
   return (
