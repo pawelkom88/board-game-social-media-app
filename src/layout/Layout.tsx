@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/theme-provider";
+import { themeConfig, ThemeProvider } from "@/components/theme-provider";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -6,7 +6,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="ui-theme">
+    <ThemeProvider defaultTheme={themeConfig.system} storageKey="ui-theme">
       {children}
     </ThemeProvider>
   );

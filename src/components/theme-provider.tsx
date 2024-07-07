@@ -1,3 +1,4 @@
+import { removeThemeClasses, setRootThemeFromSystemPreference } from "@/utils/helpers";
 import { Union } from "@/utils/ts-helpers";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -9,7 +10,7 @@ export const themeConfig = {
   pastel: "pastel",
 } as const;
 
-type Theme = Union<typeof themeConfig>;
+export type Theme = Union<typeof themeConfig>;
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -43,7 +44,7 @@ export function ThemeProvider({
     const root = window.document.documentElement;
 
     removeThemeClasses(themeConfig, root);
-    setSystemTheme(theme, root);
+    setRootThemeFromSystemPreference(theme, root);
 
     root.classList.add(theme);
   }, [theme]);
@@ -71,22 +72,3 @@ export const useTheme = () => {
 
   return context;
 };
-
-// function getTheme(theme: Theme) {
-//   return themeConfig[theme];
-// }
-function removeThemeClasses(themes: typeof themeConfig, root: HTMLElement): void {
-  Object.values(themes).forEach((t) => root.classList.remove(t));
-}
-
-// TODO: rename so it is more clear
-function setSystemTheme(theme: Theme, root: HTMLElement): void {
-  if (theme === themeConfig.system) {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? themeConfig.dark
-      : themeConfig.light;
-
-    root.classList.add(systemTheme);
-    return;
-  }
-}
