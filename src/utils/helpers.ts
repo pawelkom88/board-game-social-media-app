@@ -1,4 +1,5 @@
 import { Theme, themeConfig } from "@/components/theme-provider";
+import { NavLink } from "@/router/navLinks";
 
 export function getContrastColor(themeColor: Theme): string {
   switch (themeColor) {
@@ -29,5 +30,17 @@ export function setRootThemeFromSystemPreference(theme: Theme, root: HTMLElement
 
     root.classList.add(systemTheme);
     return;
+  }
+}
+
+export function splitNavLinks<T extends NavLink[]>(
+  navLinks: T,
+  direction: "left" | "right" = "left"
+) {
+  const slicer = Math.ceil(navLinks.length / 2);
+  if (direction === "left") {
+    return navLinks.slice(0, slicer);
+  } else {
+    return navLinks.slice(slicer);
   }
 }
