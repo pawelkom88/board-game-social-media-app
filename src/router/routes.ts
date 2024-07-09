@@ -1,8 +1,11 @@
+const rootRoute = "/app";
+
 export const RoutesConfig = {
-  home: "/",
-  boardGame: "/board-game/:id",
-  boardGames: "/board-games",
-  events: "/events",
-  market: "/market",
-  profile: "/user-profile",
+  login: "/login",
+  signup: "/signup",
+  app: rootRoute,
+  home: `${rootRoute}/home`,
+  events: `${rootRoute}/events`,
+  market: `${rootRoute}/market`,
+  profile: `${rootRoute}/profile`,
 } as const;

@@ -1,7 +1,7 @@
+import { Outlet } from "react-router-dom";
 import { Logo } from "./components/logo/Logo";
 import { ModeToggle } from "./components/mode-toggle";
 import Nav from "./components/nav/Nav";
-import { NewsFeedCard } from "./components/news-feed-card/NewsFeedCard";
 import { SearchBox } from "./components/search-box/SearchBox";
 import { TopNavButtons } from "./components/top-nav-buttons/TopNavButtons";
 import { Layout } from "./layout/Layout";
@@ -25,8 +25,7 @@ export function App() {
           </header>
           <div className="flex-1 overflow-auto">
             <div className="grid gap-4 p-4">
-              {/* // This is outlet */}
-              <NewsFeedCard />
+              <Outlet />
             </div>
           </div>
         </div>
