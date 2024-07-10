@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/router/navLinks";
-import { NavLink } from "react-router-dom";
+import { RoutesConfig } from "@/router/routes";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export function DesktopNav() {
+  const navigate = useNavigate();
   return (
     <nav className="hidden lg:flex flex-col gap-2">
       {navLinks.map((link) => {
@@ -17,7 +19,12 @@ export function DesktopNav() {
           </NavLink>
         );
       })}
-      <Button className="font-semibold mt-2 hover:bg-muted-foreground">Post</Button>
+      <Button
+        onClick={() => navigate(RoutesConfig.newPost)}
+        className="font-semibold mt-2 hover:bg-muted-foreground"
+      >
+        Post
+      </Button>
     </nav>
   );
 }
