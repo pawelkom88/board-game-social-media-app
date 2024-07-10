@@ -16,7 +16,7 @@ export const topNavButtons = [
   },
   {
     id: 3,
-    tolltipContent: "asd",
+    tolltipContent: "Open profile page",
     icon: UserIcon,
     path: RoutesConfig.profile,
   },
