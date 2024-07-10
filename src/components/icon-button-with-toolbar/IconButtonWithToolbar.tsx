@@ -24,7 +24,7 @@ export function IconButtonWithToolbar({
         >
           {tooltipContent}
         </TooltipContent>
-        <TooltipTrigger>{children}</TooltipTrigger>
+        <TooltipTrigger tabIndex={1}>{children}</TooltipTrigger>
       </Tooltip>
     </TooltipProvider>
   );
