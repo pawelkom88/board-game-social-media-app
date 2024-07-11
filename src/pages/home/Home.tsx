@@ -1,5 +1,5 @@
-import { NewsFeedCard } from "@/components/news-feed-card/NewsFeedCard";
+import { NewsFeed } from "@/components/news-feed-card/NewsFeedCard";
 
 export default function Home() {
-  return <NewsFeedCard />;
+  return <NewsFeed />;
 }
