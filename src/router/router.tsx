@@ -1,5 +1,5 @@
 import { App } from "@/App";
-import { AddNewPost } from "@/components/add-new-post/AddNewPost";
+import AddPost from "@/pages/add-post/AddPost";
 import Events from "@/pages/events/Events";
 import Home from "@/pages/home/Home";
 import Market from "@/pages/market/Market";
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: RoutesConfig.newPost,
-        element: <AddNewPost />,
+        element: <AddPost />,
       },
     ],
     // errorElement: <ErrorPage />,
