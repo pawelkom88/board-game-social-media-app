@@ -1,9 +1,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { AddPostFormData, formSchema } from "../schemas/schema";
 
 export function useAddPost() {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<AddPostFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: getDefaultValues(),
   });
@@ -19,13 +20,6 @@ export function useAddPost() {
 }
 
 // TODO: explore zod docs
-const formSchema = z.object({
-  postTitle: z.string().min(5).max(50),
-  postContent: z.string().min(5).max(500),
-  postLink: z.string().url().optional(),
-  postImage: z.string().optional(),
-  postTags: z.array(z.string()).min(1).optional(),
-});
 
 function getDefaultValues() {
   return {
