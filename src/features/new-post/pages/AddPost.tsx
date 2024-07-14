@@ -16,10 +16,9 @@ import { addPostFormFields } from "../utils/constants";
 
 export default function AddPost() {
   const { form, onPostSubmit } = useAddPost();
-
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onPostSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onPostSubmit)} className="space-y-5">
         {addPostFormFields.map((fieldd) => (
           <FormField
             key={fieldd.name}
@@ -36,7 +35,6 @@ export default function AddPost() {
             )}
           />
         ))}
-        {/* // TODO: min rows */}
         <FormField
           control={form.control}
           name="postContent"
@@ -44,13 +42,21 @@ export default function AddPost() {
             <FormItem>
               <FormLabel>Content</FormLabel>
               <FormControl>
-                <Textarea {...field} />
+                <Textarea
+                  placeholder="Post content, e.g. New game from 2022"
+                  className="resize-none min-h-48"
+                  {...field}
+                />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
         <UploadImage formControl={form.control} />
-        <Button type="submit">Submit</Button>
+        <br />
+        <Button className="hover:bg-muted" type="submit">
+          Create post
+        </Button>
       </form>
     </Form>
   );

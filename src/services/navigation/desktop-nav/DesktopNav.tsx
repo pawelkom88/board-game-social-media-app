@@ -21,7 +21,8 @@ export function DesktopNav() {
       })}
       <Button
         onClick={() => navigate(RoutesConfig.newPost)}
-        className="font-semibold mt-2 hover:bg-muted-foreground"
+        // TODO: find a new color cta
+        className="font-semibold mt-2 hover:bg-muted"
       >
         Post
       </Button>
