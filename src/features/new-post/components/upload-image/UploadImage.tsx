@@ -7,14 +7,9 @@ import {
   TooltipTrigger,
 } from "@/shared/components/ui/tooltip";
 import { Upload } from "lucide-react";
-import { Control } from "react-hook-form";
-import { AddPostFormData } from "../../schemas/schema";
+import { FormControlProps } from "../../utils/types";
 
-interface UploadImageProps {
-  formControl: Control<AddPostFormData>;
-}
-
-export function UploadImage({ formControl }: UploadImageProps) {
+export function UploadImage({ formControl }: FormControlProps) {
   return (
     <FormField
       control={formControl}

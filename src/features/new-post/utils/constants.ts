@@ -12,10 +12,4 @@ export const addPostFormFields = [
     type: "url",
     placeholder: "https://example.com",
   },
-  {
-    name: "postTags",
-    label: "Tags",
-    type: "text",
-    placeholder: "tag1, tag2, tag3",
-  },
 ] as const;

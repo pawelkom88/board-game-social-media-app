@@ -36,7 +36,7 @@ export const formSchema = z.object({
       z.literal("", {
         errorMap: () => ({ message: validationErrorMessage().tags }),
       }),
-      z.array(z.string()).min(1),
+      z.array(z.string()).min(1, validationErrorMessage().tags),
     ])
     .optional(),
 });

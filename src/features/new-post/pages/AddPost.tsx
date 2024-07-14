@@ -1,4 +1,3 @@
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/shared/components/ui/button";
 import {
   Form,
@@ -10,6 +9,8 @@ import {
 } from "@/shared/components/ui/form";
 import { Input } from "@/shared/components/ui/input";
 
+import Tags from "../components/tags/Tags";
+import TextArea from "../components/textarea/TextArea";
 import { UploadImage } from "../components/upload-image/UploadImage";
 import { useAddPost } from "../hooks/useAddPost";
 import { addPostFormFields } from "../utils/constants";
@@ -19,39 +20,24 @@ export default function AddPost() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onPostSubmit)} className="space-y-5">
-        {addPostFormFields.map((fieldd) => (
+        {addPostFormFields.map(({ name, label, placeholder }) => (
           <FormField
-            key={fieldd.name}
+            key={name}
             control={form.control}
-            name={fieldd.name}
+            name={name}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{fieldd.label}</FormLabel>
+                <FormLabel>{label}</FormLabel>
                 <FormControl>
-                  <Input placeholder={fieldd.placeholder} {...field} />
+                  <Input placeholder={placeholder} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         ))}
-        <FormField
-          control={form.control}
-          name="postContent"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Content</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Post content, e.g. New game from 2022"
-                  className="resize-none min-h-48"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <Tags formControl={form.control} />
+        <TextArea formControl={form.control} />
         <UploadImage formControl={form.control} />
         <br />
         <Button className="hover:bg-muted" type="submit">
