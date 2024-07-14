@@ -1,4 +1,4 @@
-import { themeConfig, ThemeProvider } from "@/components/theme-provider";
+import { themeConfig, ThemeProvider } from "@/shared/components/theme-provider";
 
 interface LayoutProps {
   children: React.ReactNode;

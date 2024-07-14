@@ -1,9 +1,9 @@
 import { App } from "@/App";
-import { AddNewPost } from "@/components/add-new-post/AddNewPost";
-import Events from "@/pages/events/Events";
+import Events from "@/features/events/pages/Events";
+import Market from "@/features/market/pages/Market";
+import AddPost from "@/features/new-post/pages/AddPost";
+import Profile from "@/features/user-profile/pages/UserProfile";
 import Home from "@/pages/home/Home";
-import Market from "@/pages/market/Market";
-import Profile from "@/pages/profile/Profile";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RoutesConfig } from "./routes";
 
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: RoutesConfig.newPost,
-        element: <AddNewPost />,
+        element: <AddPost />,
       },
     ],
     // errorElement: <ErrorPage />,
