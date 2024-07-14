@@ -1,4 +1,4 @@
-import { Theme, themeConfig } from "@/components/theme-provider";
+import { Theme, themeConfig } from "@/shared/components/theme-provider";
 import { NavLink } from "@/router/navLinks";
 
 export function getContrastColor(themeColor: Theme): string {

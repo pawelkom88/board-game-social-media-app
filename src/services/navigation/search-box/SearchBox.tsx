@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import { Input } from "../ui/input";
+import { Input } from "@/shared/components/ui/input";
 
 export function SearchBox() {
   return (

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import { navLinks } from "@/router/navLinks";
 import { RoutesConfig } from "@/router/routes";
 import { NavLink, useNavigate } from "react-router-dom";

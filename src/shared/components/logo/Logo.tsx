@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { getContrastColor } from "@/utils/helpers";
+import { getContrastColor } from "@/shared/utils/helpers";
 import { themeConfig, useTheme } from "../theme-provider";
 
 interface LogoProps {

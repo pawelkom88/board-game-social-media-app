@@ -1,4 +1,4 @@
-import { Union } from "@/utils/ts-helpers";
+import { Union } from "@/shared/utils/ts-helpers";
 import { CalendarCheck, HomeIcon, Store, UserIcon } from "lucide-react";
 import { RoutesConfig } from "./routes";
 

@@ -1,7 +1,6 @@
-import { topNavButtons } from "@/utils/constants";
+import { IconButtonWithToolbar } from "@/shared/components/icon-button-with-toolbar/IconButtonWithToolbar";
 import { Link } from "react-router-dom";
-import { IconButtonWithToolbar } from "../icon-button-with-toolbar/IconButtonWithToolbar";
-
+import { topNavButtons } from "../utils/constants";
 export function TopNavButtons() {
   return (
     <div className="hidden lg:flex gap-4">

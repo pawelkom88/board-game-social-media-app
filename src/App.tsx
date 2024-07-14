@@ -1,10 +1,10 @@
+import Nav from "@/services/navigation/Nav";
+import { SearchBox } from "@/services/navigation/search-box/SearchBox";
+import { TopNavButtons } from "@/services/navigation/top-nav-buttons/TopNavButtons";
 import { Outlet } from "react-router-dom";
-import { Logo } from "./components/logo/Logo";
-import { ModeToggle } from "./components/mode-toggle";
-import Nav from "./components/nav/Nav";
-import { SearchBox } from "./components/search-box/SearchBox";
-import { TopNavButtons } from "./components/top-nav-buttons/TopNavButtons";
 import { Layout } from "./layout/Layout";
+import { Logo } from "./shared/components/logo/Logo";
+import { ModeToggle } from "./shared/components/mode-toggle";
 
 export function App() {
   return (

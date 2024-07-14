@@ -1,5 +1,8 @@
-import { removeThemeClasses, setRootThemeFromSystemPreference } from "@/utils/helpers";
-import { Union } from "@/utils/ts-helpers";
+import {
+  removeThemeClasses,
+  setRootThemeFromSystemPreference,
+} from "@/shared/utils/helpers";
+import { Union } from "@/shared/utils/ts-helpers";
 import { createContext, useContext, useEffect, useState } from "react";
 
 export const themeConfig = {

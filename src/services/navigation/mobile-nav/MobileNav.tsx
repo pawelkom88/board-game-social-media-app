@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 import { cn } from "@/lib/utils";
 import { navLinks, profileNavLink } from "@/router/navLinks";
 import { RoutesConfig } from "@/router/routes";
-import { splitNavLinks } from "@/utils/helpers";
-import { Union } from "@/utils/ts-helpers";
+import { splitNavLinks } from "@/shared/utils/helpers";
+import { Union } from "@/shared/utils/ts-helpers";
 import { PlusIcon } from "lucide-react";
 import React from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
