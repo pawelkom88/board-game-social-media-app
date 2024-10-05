@@ -1,3 +1,5 @@
+import { Union } from "@/shared/utils/ts-helpers";
+
 const rootRoute = "/app";
 
 export const RoutesConfig = {
@@ -10,3 +12,5 @@ export const RoutesConfig = {
   market: `${rootRoute}/market`,
   profile: `${rootRoute}/profile`,
 } as const;
+
+export type Routes = Union<typeof RoutesConfig>;
