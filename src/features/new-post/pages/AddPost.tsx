@@ -30,9 +30,9 @@ export default function AddPost() {
               <FormItem>
                 <FormLabel>{label}</FormLabel>
                 <FormControl>
-                  <Input placeholder={placeholder} {...field} />
+                  <Input data-test-id={name} placeholder={placeholder} {...field} />
                 </FormControl>
-                <FormMessage />
+                <FormMessage data-test-id={`${name}-error-message`} />
               </FormItem>
             )}
           />
@@ -41,7 +41,11 @@ export default function AddPost() {
         <TextArea formControl={form.control} />
         <UploadImage formControl={form.control} />
         <br />
-        <Button className="hover:bg-muted" type="submit">
+        <Button
+          data-test-id="create-post-button"
+          className="hover:bg-muted"
+          type="submit"
+        >
           Create post
         </Button>
       </form>

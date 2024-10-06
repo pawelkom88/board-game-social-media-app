@@ -1,6 +1,13 @@
 import { z } from "zod";
 
-const validationErrorMessage = (name?: string) => {
+export const formFieldsName = {
+  postTitle: "Post title",
+  postContent: "Post Content",
+  postLink: "Link",
+  postImage: "Image",
+};
+
+export const validationErrorMessage = (name?: string) => {
   return {
     postRequirements: {
       minLength: `${name} must be at least 5 characters long`,
@@ -19,8 +26,8 @@ const tagSchema = z.object({
 export const formSchema = z.object({
   postTitle: z
     .string()
-    .min(5, validationErrorMessage("Post title").postRequirements.minLength)
-    .max(75, validationErrorMessage("Post title").postRequirements.maxLength),
+    .min(5, validationErrorMessage(formFieldsName.postTitle).postRequirements.minLength)
+    .max(75, validationErrorMessage(formFieldsName.postTitle).postRequirements.maxLength),
   postContent: z
     .string()
     .min(5, validationErrorMessage("Post content").postRequirements.minLength),
