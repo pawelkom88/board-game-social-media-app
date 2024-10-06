@@ -1,13 +1,13 @@
 import { RoutesConfig } from "@/router/routes";
-import { MessageCircleIcon, SignalIcon, UserIcon } from "lucide-react";
+import { MessageCircleIcon, UserIcon } from "lucide-react";
 
 export const topNavButtons = [
-  {
-    id: 1,
-    tolltipContent: "asd",
-    icon: SignalIcon,
-    path: RoutesConfig.home,
-  },
+  // {
+  //   id: 1,
+  //   tolltipContent: "asd",
+  //   icon: SignalIcon,
+  //   path: RoutesConfig.app,
+  // },
   {
     id: 2,
     tolltipContent: "asd",
