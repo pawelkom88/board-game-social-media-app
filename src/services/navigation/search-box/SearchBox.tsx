@@ -1,5 +1,5 @@
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Input } from "@/shared/components/ui/input";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 export function SearchBox() {
   return (
@@ -10,3 +10,4 @@ export function SearchBox() {
     </div>
   );
 }
+// add ctrl K option to search

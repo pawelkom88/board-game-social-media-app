@@ -1,7 +1,8 @@
-import { Button } from "@/shared/components/ui/button";
 import { cn } from "@/lib/utils";
 import { navLinks, profileNavLink } from "@/router/navLinks";
 import { RoutesConfig } from "@/router/routes";
+import { Button } from "@/shared/components/ui/button";
+import { commonBgTransitionStyles } from "@/shared/utils/constants";
 import { splitNavLinks } from "@/shared/utils/helpers";
 import { Union } from "@/shared/utils/ts-helpers";
 import { PlusIcon } from "lucide-react";
@@ -15,14 +16,14 @@ interface LinkProps {
   active: boolean;
 }
 
-const Link = ({ name, path, icon, active }: LinkProps) => {
+export const Link = ({ name, path, icon, active }: LinkProps) => {
   return (
     <NavLink
       to={path}
       className={({ isActive }) =>
-        `${
-          isActive ? "bg-background" : ""
-        } flex items-center flex-col gap-col-1 gap-row-2 rounded-md px-2 py-1 text-primary`
+        `${getActiveStyles(
+          isActive
+        )} flex items-center flex-col gap-col-1 gap-row-2 rounded-md px-2 py-1 text-primary`
       }
     >
       {React.cloneElement(icon, {
@@ -61,3 +62,10 @@ export function MobileNav() {
     </nav>
   );
 }
+
+const getActiveStyles = (isActive: boolean): string => {
+  return isActive
+    ? `bg-background ${commonBgTransitionStyles}`
+    : `${commonBgTransitionStyles}
+  `;
+};
