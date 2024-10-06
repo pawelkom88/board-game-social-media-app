@@ -11,6 +11,11 @@ const validationErrorMessage = (name?: string) => {
   };
 };
 
+const tagSchema = z.object({
+  id: z.string(),
+  text: z.string(),
+});
+
 export const formSchema = z.object({
   postTitle: z
     .string()
@@ -22,23 +27,17 @@ export const formSchema = z.object({
   postLink: z
     .union([
       z.literal(""),
-      z.string()
+      z
+        .string()
         .url({
           message: validationErrorMessage().url,
         })
         .optional(),
     ])
     .optional(),
+  // to be considered as required field maybe with its own schema
   postImage: z.optional(z.string()),
-  // TODO: to be sync with state when adding tags
-  postTags: z
-    .union([
-      z.literal("", {
-        errorMap: () => ({ message: validationErrorMessage().tags }),
-      }),
-      z.array(z.string()).min(1, validationErrorMessage().tags),
-    ])
-    .optional(),
+  postTags: z.array(tagSchema),
 });
 
 export type AddPostFormData = z.infer<typeof formSchema>;

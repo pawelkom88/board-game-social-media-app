@@ -16,7 +16,8 @@ import { useAddPost } from "../hooks/useAddPost";
 import { addPostFormFields } from "../utils/constants";
 
 export default function AddPost() {
-  const { form, onPostSubmit } = useAddPost();
+  const { form, onPostSubmit, setValue, setError } = useAddPost();
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onPostSubmit)} className="space-y-5">
@@ -36,7 +37,7 @@ export default function AddPost() {
             )}
           />
         ))}
-        <Tags formControl={form.control} />
+        <Tags formControl={form.control} onValueChange={setValue} onError={setError} />
         <TextArea formControl={form.control} />
         <UploadImage formControl={form.control} />
         <br />

@@ -1,6 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { defaultTags } from "../components/tags/Tags";
 import { AddPostFormData, formSchema } from "../schemas/schema";
 
 export function useAddPost() {
@@ -13,9 +14,13 @@ export function useAddPost() {
     console.log(values);
   }
 
+  const { setValue, setError } = form;
+
   return {
     form,
     onPostSubmit,
+    setValue,
+    setError,
   };
 }
 
@@ -27,6 +32,6 @@ function getDefaultValues() {
     postContent: "",
     postLink: "",
     postImage: "",
-    postTags: [],
+    postTags: defaultTags,
   };
 }
