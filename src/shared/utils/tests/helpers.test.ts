@@ -3,7 +3,7 @@ import { describe, expect } from "vitest";
 import { getContrastColor, themeColors } from "../helpers";
 
 describe("helpers function", () => {
-  describe.only("getContrastColor", () => {
+  describe("getContrastColor", () => {
     it("should return the right color based on the theme", () => {
       // @ts-expect-error testing
       const result = getContrastColor("mambo jambo");
