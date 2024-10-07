@@ -1,21 +1,27 @@
 import { NavLink } from "@/router/navLinks";
 import { Theme, themeConfig } from "@/shared/components/theme-provider";
 
+export const themeColors = {
+  accent: `hsl(var(--accent))`,
+  foreground: `hsl(var(--foreground))`,
+  custom: `hsl(var(--custom))`,
+} as const;
+
 export function getContrastColor(themeColor: Theme): string {
   const isAppTheme = themeColor in themeConfig;
   if (!isAppTheme) return "";
 
-  const accentClr = `hsl(var(--accent))`;
+  const accentClr = themeColors.accent;
 
-  const themeColors = {
-    [themeConfig.light]: `hsl(var(--foreground))`,
-    [themeConfig.dark]: `hsl(var(--custom))`,
-    [themeConfig.system]: `hsl(var(--custom))`,
+  const themeColorsConfig = {
+    [themeConfig.light]: themeColors.foreground,
+    [themeConfig.dark]: themeColors.custom,
+    [themeConfig.system]: themeColors.custom,
     [themeConfig.calm]: accentClr,
     [themeConfig.pastel]: accentClr,
   };
 
-  return themeColors[themeColor];
+  return themeColorsConfig[themeColor];
 }
 
 export function removeThemeClasses(themes: typeof themeConfig, root: HTMLElement): void {
