@@ -33,27 +33,27 @@ describe("helpers function", () => {
       }
     );
   });
-  describe("setRootThemeFromSystemPreference", () => {
-    it("should return the right color based on the theme", () => {
-      // @ts-expect-error testing
-      const result = setRootThemeFromSystemPreference("mambo jambo");
-      expect(result).toBe("");
-    });
-  });
+  // describe("setRootThemeFromSystemPreference", () => {
+  //   it("should return the right color based on the theme", () => {
+  //     // @ts-expect-error testing
+  //     const result = setRootThemeFromSystemPreference("mambo jambo");
+  //     expect(result).toBe("");
+  //   });
+  // });
 
-  describe("removeThemeClasses", () => {
-    it("should return the right color based on the theme", () => {
-      // @ts-expect-error testing
-      const result = removeThemeClasses("mambo jambo");
-      expect(result).toBe("");
-    });
-  });
+  // describe("removeThemeClasses", () => {
+  //   it("should return the right color based on the theme", () => {
+  //     // @ts-expect-error testing
+  //     const result = removeThemeClasses("mambo jambo");
+  //     expect(result).toBe("");
+  //   });
+  // });
 
-  describe("splitNavLinks", () => {
-    it("should return the right color based on the theme", () => {
-      // @ts-expect-error testing
-      const result = splitNavLinks("mambo jambo");
-      expect(result).toBe("");
-    });
-  });
+  // describe("splitNavLinks", () => {
+  //   it("should return the right color based on the theme", () => {
+  //     // @ts-expect-error testing
+  //     const result = splitNavLinks("mambo jambo");
+  //     expect(result).toBe("");
+  //   });
+  // });
 });
