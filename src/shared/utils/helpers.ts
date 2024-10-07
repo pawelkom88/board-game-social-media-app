@@ -2,6 +2,9 @@ import { NavLink } from "@/router/navLinks";
 import { Theme, themeConfig } from "@/shared/components/theme-provider";
 
 export function getContrastColor(themeColor: Theme): string {
+  const isAppTheme = themeColor in themeConfig;
+  if (!isAppTheme) return "";
+
   const accentClr = `hsl(var(--accent))`;
 
   const themeColors = {

@@ -14,7 +14,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "types": ["vitest/globals", "@testing-library/jest-dom"],
+    "types": ["vitest/globals", "@testing-library/jest-dom", "cypress"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -31,5 +31,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "cypress", "node", "cypress.d.ts"],
+  "exclude": ["node_modules", "./cypress/support/commands.ts"]
 }
