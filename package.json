@@ -10,8 +10,10 @@
     "preview": "vite preview",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "e2e:open": "cypress open",
-    "e2e:run": "cypress run"
+    "e2e:open": "cypress open --browser chrome",
+    "e2e:run": "cypress run --browser chrome",
+    "e2e:open:mobile": "cypress open --config viewportWidth=375,viewportHeight=667",
+    "e2e:run:mobile": "cypress run --config viewportWidth=375,viewportHeight=667"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.0.6",
