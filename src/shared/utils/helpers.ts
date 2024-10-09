@@ -24,17 +24,22 @@ export function getContrastColor(themeColor: Theme): string {
   return themeColorsConfig[themeColor];
 }
 
-export function removeThemeClasses(themes: typeof themeConfig, root: HTMLElement): void {
-  Object.values(themes).forEach((theme) => root.classList.remove(theme));
+export function removeThemeClasses(themes: Theme, rootElement: HTMLElement): void {
+  if (!rootElement) return;
+  Object.values(themes).forEach((theme) => rootElement.classList.remove(theme));
 }
 
-export function setRootThemeFromSystemPreference(theme: Theme, root: HTMLElement): void {
-  if (theme === themeConfig.system) {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? themeConfig.dark
-      : themeConfig.light;
+export function setRootThemeFromSystemPreference(
+  theme: Theme,
+  rootElement: HTMLElement
+): void {
+  if (!rootElement) return;
 
-    root.classList.add(systemTheme);
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (theme === themeConfig.system) {
+    const systemTheme = isDarkMode ? themeConfig.dark : themeConfig.light;
+    rootElement.classList.add(systemTheme);
     return;
   }
 }
@@ -42,7 +47,9 @@ export function setRootThemeFromSystemPreference(theme: Theme, root: HTMLElement
 export function splitNavLinks<T extends NavLink[]>(
   navLinks: T,
   direction: "left" | "right" = "left"
-) {
+): NavLink[] {
+  if (!navLinks.length) return [];
+  
   const slicer = Math.ceil(navLinks.length / 2);
   if (direction === "left") {
     return navLinks.slice(0, slicer);
